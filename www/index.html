@@ -4,84 +4,24 @@
         <title>PhoneGap Demo</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
             <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-            <script type="text/javascript" charset="utf-8" src="js/jquery-1.11.0.min.js"></script>
-            <script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.4.1.min.js"></script>
-            <link rel="stylesheet" type="text/css" href="js/jquery.mobile-1.4.1.min.css"/>
+            <script type="text/javascript" charset="utf-8" src="jquery/jquery-1.11.1.min.js"></script>
+            <script type="text/javascript" charset="utf-8" src="jquery/jquery.mobile-1.4.1.min.js"></script>
+            <link rel="stylesheet" type="text/css" href="jquery/jquery.mobile-1.4.1.min.css"/>
             <script type="text/javascript" charset="utf-8">
+                //*********************************************************
+                // Espere o Cordova Carregar
+                //*********************************************************
                 document.addEventListener("deviceready", onDeviceReady, false);
                 function onDeviceReady() {
-                    $("#content").html("Hello, World! Demo  JQsuery Mobile com PhoneGap 2!");
+                    $("#content").html("Hello, World! Demo  JQuery Mobile com PhoneGap 2!");
                 }
-                $(function(){
-                    var menuStatus;
-                    
-                    $("a.showMenu").click(function(){
-                        if(menuStatus != true){                
-                        $(".ui-page-active").animate({
-                            marginLeft: "165px",
-                          }, 300, function(){menuStatus = true});
-                          return false;
-                          } else {
-                            $(".ui-page-active").animate({
-                            marginLeft: "0px",
-                          }, 300, function(){menuStatus = false});
-                            return false;
-                          }
-                    });
-                 
-                    $('.pages').live("swipeleft", function(){
-                        if (menuStatus){    
-                        $(".ui-page-active").animate({
-                            marginLeft: "0px",
-                          }, 300, function(){menuStatus = false});
-                          }
-                    });
-                    
-                    $('.pages').live("swiperight", function(){
-                        if (!menuStatus){    
-                        $(".ui-page-active").animate({
-                            marginLeft: "165px",
-                          }, 300, function(){menuStatus = true});
-                          }
-                    });
-                    
-                    $("#menu li a").click(function(){
-                        var p = $(this).parent();
-                        if($(p).hasClass('active')){
-                            $("#menu li").removeClass('active');
-                        } else {
-                            $("#menu li").removeClass('active');
-                            $(p).addClass('active');
-                        }
-                    });
-                        
-                });
             </script>
     </head>
     <body>
         <div data-role="page" id="main">
-
-            <div id="menu">
-            <h3>Menu</h3>
-                <ul>
-                    <li class="active"><a href="#home" class="contentLink">Home </a></li>
-                    <li><a href="#home" class="contentLink">About </a></li>
-                    <li><a href="#home" class="contentLink">Portfolio </a></li>
-                    <li><a href="#home" class="contentLink">Contact </a></li>
-                </ul>
+            <div data-role="header">
+                <h1></h1>
             </div>
-            <div data-role="page" class="pages" id="home">
-                <div data-role="header">
-                    <a href="#"class="showMenu">Menu</a>
-                    <h1>Teste facebook menu</h1>
-                </div><!-- /header -->
-                <div data-role="content">
-                    <p><strong>Note: You can swipe right/left to show/close menu.</strong></p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                </div><!-- /content -->
-            </div><!-- /page -->
-
             <div id="content" data-role="content"></div>
         </div>
     </body>
