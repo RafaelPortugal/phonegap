@@ -1,28 +1,67 @@
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <title>PhoneGap Demo</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-            <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-            <script type="text/javascript" charset="utf-8" src="jquery/jquery-1.11.1.min.js"></script>
-            <script type="text/javascript" charset="utf-8" src="jquery/jquery.mobile-1.4.1.min.js"></script>
-            <link rel="stylesheet" type="text/css" href="jquery/jquery.mobile-1.4.1.min.css"/>
-            <script type="text/javascript" charset="utf-8">
-                //*********************************************************
-                // Espere o Cordova Carregar
-                //*********************************************************
-                document.addEventListener("deviceready", onDeviceReady, false);
-                function onDeviceReady() {
-                    $("#content").html("Hello, World! Demo  JQuery Mobile com PhoneGap 2!");
-                }
-            </script>
-    </head>
-    <body>
-        <div data-role="page" id="main">
-            <div data-role="header">
-                <h1></h1>
-            </div>
-            <div id="content" data-role="content"></div>
-        </div>
-    </body>
+
+<!DOCTYPE html> 
+<html> 
+  <head> 
+  <title>FB Style Menu</title> 
+  <meta id="extViewportMeta" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" /> 
+  <link rel="stylesheet" href="css/jquery.mobile-1.4.1.min.css" />
+  <link rel="stylesheet" href="css/main.css?v=31" />
+  <script type="text/javascript" src="jquery/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="jquery/jquery.mobile-1.4.1.min.js"></script>
+  <script type="text/javascript" src="js/app.js?v=30"></script>
+</head> 
+
+<body> 
+<div id="menu">
+<h3>Menu</h3>
+  <ul>
+    <li class="active"><a href="#home" class="contentLink">Home</a></li>
+    <li><a href="#page1" class="contentLink">Page 1</a></li>
+    <li><a href="#page2" class="contentLink">Page 2</a></li>
+    <li><a href="#page3" class="contentLink">Page 3</a></li>
+  </ul>
+</div>
+<div data-role="page" class="pages" id="home">
+  <div data-role="header">
+  <a href="#"class="showMenu">Menu</a>
+    <h1>Hello World!!</h1>
+  </div><!-- /header -->
+  <div data-role="content">
+    <p>Minha primeira aplicação</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, dolores, non quod error officia molestias cum placeat vel nobis accusantium consequuntur iure optio dolor quibusdam perspiciatis numquam odio maiores aliquid.</p>
+  </div><!-- /content -->
+</div><!-- /page -->
+<div data-role="page" class="pages" id="page1">
+  <div data-role="header">
+  <a href="#"class="showMenu">Menu</a>
+    <h1>Titulo 1</h1>
+  </div><!-- /header -->
+  <div data-role="content">
+   <p>Pagina 1</p>
+  </div><!-- /content -->
+</div><!-- /page -->
+
+<div data-role="page" class="pages" id="page2">
+  <div data-role="header">
+  <a href="#"class="showMenu">Menu</a>
+    <h1>Titulo 2</h1>
+  </div><!-- /header -->
+  <div data-role="content">
+   <p>Pagina 2</p>
+  </div><!-- /content -->
+</div><!-- /page -->
+
+<div data-role="page" class="pages" id="page3">
+  <div data-role="header">
+  <a href="#"class="showMenu">Menu</a>
+        <h1>Titulo 3</h1>
+  </div><!-- /header -->
+  <div data-role="content">
+   <p>Pagina 3</p>
+  </div><!-- /content -->
+</div><!-- /page -->
+
+</body>
 </html>
