@@ -1,21 +1,18 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+function show(elementID) {
+    var container = document.getElementsByClassName('container')[0];
+    var element = document.getElementById(elementID.replace('#', ''));
+    if (!element) {
+        alert("Pagina não encontrada");
+        return;
+    }
+    var pages = document.getElementsByClassName('show-page');
+    for (var i = pages.length - 1; i >= 0; i--) {
+        pages[i].classList.remove('show-page');
+    };
+    container.classList.remove('open-sidebar');
+    element.classList.add('show-page');
+}
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -27,6 +24,7 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        show('page1');
     },
     // deviceready Event Handler
     //
@@ -37,13 +35,23 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
+        document.getElementById('sidebar-toggle').onclick = function() {
+            container = document.getElementsByClassName('container')[0];
+            if(window.getComputedStyle(container).getPropertyValue('left') == '0px') 
+            { 
+                container.classList.add('open-sidebar');
+            } else {
+                container.classList.remove('open-sidebar');
+            }  
+        }
+        
+        var transitions = document.getElementsByClassName("transition-page");
+        for (var i = transitions.length - 1; i >= 0; i--) {
+            transitions[i].onclick = function(){
+                show(this.getAttribute("href"));
+            };
+        }
     }
 };
+
+
