@@ -1,5 +1,14 @@
+function openMenu() {
+    container.classList.add('open-sidebar');
+    is_open_menu = true
+}
+
+function closeMenu() {
+    container.classList.remove('open-sidebar');
+    is_open_menu = false
+}
 function show(elementID) {
-    var container = document.getElementsByClassName('container')[0];
+    // var container = document.getElementsByClassName('container')[0];
     var element = document.getElementById(elementID.replace('#', ''));
     if (!element) {
         alert("Pagina não encontrada");
@@ -9,9 +18,10 @@ function show(elementID) {
     for (var i = pages.length - 1; i >= 0; i--) {
         pages[i].classList.remove('show-page');
     };
-    container.classList.remove('open-sidebar');
+    closeMenu();
     element.classList.add('show-page');
 }
+
 
 var app = {
     // Application Constructor
@@ -24,7 +34,6 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-        show('page1');
     },
     // deviceready Event Handler
     //
@@ -32,16 +41,17 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        container = document.getElementsByClassName('container')[0];
+        is_open_menu = false
+        show('page1');
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         document.getElementById('sidebar-toggle').onclick = function() {
-            container = document.getElementsByClassName('container')[0];
-            if(window.getComputedStyle(container).getPropertyValue('left') == '0px') 
-            { 
-                container.classList.add('open-sidebar');
+            if(!is_open_menu) { 
+                openMenu();
             } else {
-                container.classList.remove('open-sidebar');
+                closeMenu();
             }  
         }
         
@@ -51,6 +61,18 @@ var app = {
                 show(this.getAttribute("href"));
             };
         }
+        $('body').on('swipeLeft', function(e){
+            if (is_open_menu) {
+                hideMenu();
+            }
+
+        });
+        $('body').on('swipeLeft', function(e){
+            if (!is_open_menu) {
+                openMenu();
+            }
+        });
+
     }
 };
 
