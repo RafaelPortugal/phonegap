@@ -95,4 +95,5 @@ body, html {
     -webkit-transition: opacity 1s ease-out;
     opacity: 1;
     overflow: hidden;
+    height: auto !important;
 }
