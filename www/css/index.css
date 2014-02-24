@@ -1,7 +1,7 @@
 body, html {
     height: 100%;
     margin: 0;
-    overflow:hidden;
+    overflow-x:hidden;
     font-family: helvetica;
     font-weight: 100;
 }
@@ -95,5 +95,5 @@ body, html {
     -webkit-transition: opacity 1s ease-out;
     opacity: 1;
     overflow: hidden;
-    height: auto !important;
+    height: auto;
 }
