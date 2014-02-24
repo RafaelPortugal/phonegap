@@ -22,17 +22,6 @@ function show(elementID) {
     element.classList.add('show-page');
 }
 
-function scrollRight() {
-    if (!is_open_menu) {
-        hideMenu();
-    }
-}
-
-function scrollLeft() {
-    if (is_open_menu) {
-        hideMenu();
-    }
-}
 
 var app = {
     // Application Constructor
@@ -72,9 +61,16 @@ var app = {
                 show(this.getAttribute("href"));
             };
         }
-        
-        $('.container').swipeLeft(scrollLeft);
-        $('.container').swipeRight(scrollRight);
+        // Hammer(el).on("swipeleft", function() {
+        //     if (is_open_menu) {
+        //         closeMenu();
+        //     }
+        // });
+        // Hammer(el).on("swiperight", function() {
+        //     if (!is_open_menu) {
+        //         openMenu();
+        //     }
+        // });
 
     }
 };
