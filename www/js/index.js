@@ -70,16 +70,16 @@ var app = {
                 e.preventDefault();
             };
         }
-        // Hammer(el).on("swipeleft", function() {
-        //     if (is_open_menu) {
-        //         closeMenu();
-        //     }
-        // });
-        // Hammer(el).on("swiperight", function() {
-        //     if (!is_open_menu) {
-        //         openMenu();
-        //     }
-        // });
+        Hammer(el).on("swipeleft", function() {
+            if (is_open_menu) {
+                closeMenu();
+            }
+        });
+        Hammer(el).on("swiperight", function() {
+            if (!is_open_menu) {
+                openMenu();
+            }
+        });
 
     }
 };
