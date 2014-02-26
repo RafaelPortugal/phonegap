@@ -122,7 +122,9 @@ body.opened, body.opened header{
 nav.opened {
     left: 0;
 }
-
+body.opened #content{
+    left: 150px;
+}
 nav{
     position: fixed;
     left: -150px;
