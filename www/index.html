@@ -26,35 +26,29 @@
         <title>Aplicativo Copa</title>
     </head>
     <body>
-        
-        <div class="container">
-            <div id="sidebar" ng-controller="LeftMenu">
-                <ul ng-repeat="item in itens">
-                    <li class="{{item.status}}"><a href="{{item.href}}" class="transition-page" ng-click="activeMenu(item)">{{ item.title }}</a></li>
-                </ul>
+        <nav ng-controller="LeftMenu" id="nav-left">
+            <ul>
+                <li ng-repeat="item in itens" class="{{item.status}}"><a href="{{item.href}}" class="transition-page" ng-click="activeMenu(item)">{{ item.title }}</a></li>
+            </ul>
+        </nav>
+        <header>
+            <a href="#" class="openMenu" id="sidebar-toggle">MENU</a>
+            <h1>Teste</h1>
+        </header>
+        <div id="content">
+            <div id="page1" class="page">
+                <h2>Page 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, magni, molestias, praesentium, ratione est exercitationem quibusdam repudiandae necessitatibus ullam accusantium voluptates ipsa vitae suscipit eveniet cumque totam recusandae cum unde.</p>
             </div>
-            <div class="main-content">
-                <a href="#" data-toggle=".container" id="sidebar-toggle">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </a>
-                <div class="content">
-                    <div id="page1" class="page">
-                        <h1>Page 1</h1>
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, ducimus, deserunt, reprehenderit, natus possimus veniam consequatur aperiam fugiat sed saepe cupiditate soluta sapiente eligendi rerum minus! Voluptate, maxime esse veritatis.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, soluta labore expedita accusantium repellendus ex sed nemo. Et, nisi, ea, dolor, illum excepturi libero ipsam distinctio minima beatae eligendi temporibus?</p>
-                    </div>
-                    <div id="page2" class="page">
-                        <h1>Page 2</h1>
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                    </div>
-                    <div id="page3" class="page">
-                        <h1>Page 3</h1>
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                    </div>
-                </div>
+            <div id="page2" class="page">
+                    <h2>Page 2</h2>
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, ipsum, vel, quo aut porro sequi quisquam perspiciatis fugiat sapiente commodi veniam ea assumenda doloribus officiis voluptates harum fuga vitae magni!</p> 
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, qui excepturi illo. Eius, rem, neque quo laborum deleniti culpa voluptatem iure quis placeat ullam nam odit qui adipisci quas distinctio.</p>
+
+            </div>
+            <div id="page3" class="page">
+                    <h2>Page 3</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, incidunt, ea earum harum facilis voluptas mollitia consequuntur quis! Omnis, animi, doloribus aspernatur ratione officiis temporibus sint eaque corporis vero blanditiis.</p>
             </div>
         </div>
     

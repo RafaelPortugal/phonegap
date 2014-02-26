@@ -1,14 +1,15 @@
 function openMenu() {
-    container.classList.add('open-sidebar');
-    is_open_menu = true
+    body.classList.add('opened');
+    nav.classList.add('opened');
+    is_open_menu = true;
 }
 
 function closeMenu() {
-    container.classList.remove('open-sidebar');
-    is_open_menu = false
+    body.classList.remove('opened');
+    nav.classList.remove('opened');
+    is_open_menu = false;
 }
 function show(elementID) {
-    // var container = document.getElementsByClassName('container')[0];
     var element = document.getElementById(elementID.replace('#', ''));
     if (!element) {
         alert("Pagina não encontrada");
@@ -40,10 +41,18 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
-        container = document.getElementsByClassName('container')[0];
-        is_open_menu = false
+        is_open_menu = false;
+        body = document.body
+        nav = document.getElementById('nav-left');
+        transitions = document.getElementsByClassName("transition-page");
         show('page1');
+        app.receivedEvent('deviceready');
+        if (window.localStorage.getItem('language')){
+            alert("Salvou o language");
+        }else {
+            alert("Não tinha language");
+            window.localStorage.setItem('language', 10);
+        }
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -51,14 +60,14 @@ var app = {
             if(!is_open_menu) { 
                 openMenu();
             } else {
-                closeMenu();
+               closeMenu();
             }  
+            return false
         }
-        
-        var transitions = document.getElementsByClassName("transition-page");
         for (var i = transitions.length - 1; i >= 0; i--) {
-            transitions[i].onclick = function(){
+            transitions[i].onclick = function(e){
                 show(this.getAttribute("href"));
+                e.preventDefault();
             };
         }
         // Hammer(el).on("swipeleft", function() {
