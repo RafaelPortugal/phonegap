@@ -71,13 +71,13 @@ var app = {
             };
         }
         Hammer(body).on("swipeleft", function() {
-            alert('left');
+            alert('Left');
             if (is_open_menu) {
                 closeMenu();
             }
         });
         Hammer(body).on("swiperight", function() {
-            alert('left');
+            alert('Right');
             if (!is_open_menu) {
                 openMenu();
             }

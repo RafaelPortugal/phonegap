@@ -124,6 +124,7 @@ nav.opened {
 }
 body.opened #content{
     left: 150px;
+    position: absolute;
 }
 nav{
     position: fixed;
