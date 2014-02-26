@@ -11,7 +11,6 @@ function LeftMenu($scope) {
         {href: '#page3', title: 'Paje 3', status: 'deactive', language: 3},
 
     ];
-    $scope.getLang = document.localStorage.getItem('language') || 1;
     $scope.activeMenu = function(item) {
 
     	angular.forEach($scope.itens, function(i) {

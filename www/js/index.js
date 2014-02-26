@@ -70,13 +70,14 @@ var app = {
                 e.preventDefault();
             };
         }
-        Hammer(body).on("swipeleft", function() {
+        content = document.getElementById('content');
+        Hammer(content).on("swipeleft", function() {
             alert('Left');
             if (is_open_menu) {
                 closeMenu();
             }
         });
-        Hammer(body).on("swiperight", function() {
+        Hammer(content).on("swiperight", function() {
             alert('Right');
             if (!is_open_menu) {
                 openMenu();
