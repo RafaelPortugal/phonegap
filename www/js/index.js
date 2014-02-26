@@ -51,7 +51,7 @@ var app = {
             alert("Salvou o language");
         }else {
             alert("Não tinha language");
-            window.localStorage.setItem('language', 10);
+            window.localStorage.setItem('language', 1);
         }
     },
     // Update DOM on a Received Event

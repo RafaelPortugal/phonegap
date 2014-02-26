@@ -28,7 +28,7 @@
     <body>
         <nav ng-controller="LeftMenu" id="nav-left">
             <ul>
-                <li ng-repeat="item in itens" class="{{item.status}}"><a href="{{item.href}}" class="transition-page" ng-click="activeMenu(item)">{{ item.title }}</a></li>
+                <li ng-repeat="item in itens | filter:language:getLang " class="{{item.status}}"><a href="{{item.href}}" class="transition-page" ng-click="activeMenu(item)">{{ item.title }}</a></li>
             </ul>
         </nav>
         <header>
