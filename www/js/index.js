@@ -70,12 +70,12 @@ var app = {
                 e.preventDefault();
             };
         }
-        Hammer(el).on("swipeleft", function() {
+        Hammer(body).on("swipeleft", function() {
             if (is_open_menu) {
                 closeMenu();
             }
         });
-        Hammer(el).on("swiperight", function() {
+        Hammer(body).on("swiperight", function() {
             if (!is_open_menu) {
                 openMenu();
             }
