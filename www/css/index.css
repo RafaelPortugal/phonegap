@@ -123,8 +123,7 @@ nav.opened {
     left: 0;
 }
 body.opened #content{
-    left: 150px;
-    position: absolute;
+    overflow-x: hidden;
 }
 nav{
     position: fixed;
