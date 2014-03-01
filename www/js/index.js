@@ -9,6 +9,7 @@ function closeMenu() {
     nav.classList.remove('opened');
     is_open_menu = false;
 }
+
 function show(elementID) {
     var element = document.getElementById(elementID.replace('#', ''));
     if (!element) {
@@ -48,9 +49,9 @@ var app = {
         show('page1');
         app.receivedEvent('deviceready');
         if (window.localStorage.getItem('language')){
-            alert("Salvou o language");
+            // alert("Salvou o language");
         }else {
-            alert("Não tinha language");
+            // alert("Não tinha language");
             window.localStorage.setItem('language', 1);
         }
     },
@@ -70,18 +71,15 @@ var app = {
                 e.preventDefault();
             };
         }
-        content = document.getElementById('content');
-        Hammer(content).on("swipeleft", function() {
-            alert('Left');
+        Hammer(body).on("swipeleft", function() {
             if (is_open_menu) {
                 closeMenu();
-            }
+            };
         });
-        Hammer(content).on("swiperight", function() {
-            alert('Right');
+        Hammer(body).on("swiperight", function() {
             if (!is_open_menu) {
                 openMenu();
-            }
+            };
         });
 
     }
